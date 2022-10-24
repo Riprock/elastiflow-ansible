@@ -1,0 +1,10 @@
+---
+- name: Download Elastiflow .deb
+  ansible.builtin.get_url:
+    url: https://elastiflow-packages.s3.amazonaws.com/flow-collector/flow-collector_6.0.0-rc.1_linux_amd64.deb
+    dest: {{ default-download-path-full }}
+    mode: '0440'
+
+- name: Install Elastiflow Deb
+  ansible.builtin.apt:
+    deb: {{ default-download-path-full }}
