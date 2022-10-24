@@ -2,9 +2,16 @@
 - name: Download Elastiflow .deb
   ansible.builtin.get_url:
     url: https://elastiflow-packages.s3.amazonaws.com/flow-collector/flow-collector_6.0.0-rc.1_linux_amd64.deb
-    dest: {{ default-download-path-full }}
+    dest: "{{ default-download-path-full }}/flow-collector_6.0.0-rc.1_linux_amd64.deb"
     mode: '0440'
 
 - name: Install Elastiflow Deb
   ansible.builtin.apt:
-    deb: {{ default-download-path-full }}
+    deb: "{{ default-download-path-full }}/flow-collector_6.0.0-rc.1_linux_amd64.deb"
+
+- name: Upload Template
+  template:
+    src: "templates/flowcoll.conf.j2"
+    dest: "/etc/systemd/system/flowcoll.service.d/flowcoll.conf"
+    mode: 0644
+  notify: restart elastiflow

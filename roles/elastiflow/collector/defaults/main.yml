@@ -1,9 +1,9 @@
 ---
-default-download-path-full: /tmp/flow-collector_6.0.0-rc.1_linux_amd64.deb
+default-download-path-full: /tmp
 
 
 # CONF DATA 
-EF-FLOW-ACCOUNT-ID: null
+EF-FLOW-ACCOUNT-ID: 
 EF-FLOW-LICENSE-KEY: null
 EF-FLOW-LICENSE-ACCEPTED: false
 EF-FLOW-LICENSED-UNITS: null

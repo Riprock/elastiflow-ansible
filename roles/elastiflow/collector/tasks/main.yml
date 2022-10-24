@@ -1,0 +1,6 @@
+---
+- name: Upload Template
+  template:
+    src: "templates/flowcoll.conf.j2"
+    dest: "/tmp/flowcoll.conf"
+    mode: 0644  
