@@ -1,0 +1,6 @@
+---
+- name: daemon-reload
+  ansible.builtin.systemd:
+    daemon-reload: yes
+    name: flowcoll.conf
+    state: restarted
