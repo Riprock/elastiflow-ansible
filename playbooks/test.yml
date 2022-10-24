@@ -1,4 +1,5 @@
 ---
 - hosts: all
   become: true
-  tasks:
+  roles:
+    - role: ../roles/elastiflow

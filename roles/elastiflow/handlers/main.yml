@@ -1,6 +1,6 @@
 ---
-- name: daemon-reload
+- name: restart elastiflow
   ansible.builtin.systemd:
     daemon-reload: yes
-    name: flowcoll.conf
+    name: flowcoll.service
     state: restarted
